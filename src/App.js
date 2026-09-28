@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import{BrowserRouter,Routes,Route} from "react-router-dom";
 import './App.css';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Profilesetup from './Profilesetup';
+import CVUpload from './pages/Cvupload';
+import MyProfile from './pages/MyProfile';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/about" element={<AboutUs/>}/>
+      <Route path='/signup' element={<Signup/>}/>
+      <Route path='/login' element={<Login/>}/>
+       <Route path='/profilesetup' element={<Profilesetup/>}/>   
+       <Route path='/cv-upload' element={<CVUpload/>}/>   
+       <Route path='/myprofile' element={<MyProfile/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
